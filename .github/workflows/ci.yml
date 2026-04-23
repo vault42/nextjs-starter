@@ -17,12 +17,11 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9 # Matches current pnpm version trends, or you can specify 'latest'
+          version: latest
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-with-pnpm: true
           node-version: 20
           cache: 'pnpm'
 
