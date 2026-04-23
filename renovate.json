@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":renovatePrefix",
+    ":semanticPrefixFixDepsChoreOthers",
+    "group:monorepos",
+    "group:recommended",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "pnpm": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["next", "react", "react-dom"],
+      "groupName": "next.js and react core"
+    },
+    {
+      "matchPackagePrefixes": ["@types/"],
+      "groupName": "typescript types",
+      "automerge": true
+    }
+  ],
+  "dependencyDashboard": true,
+  "rebaseWhen": "behind-base-branch"
+}
