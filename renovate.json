@@ -12,9 +12,6 @@
     "group:recommended",
     "helpers:pinGitHubActionDigests"
   ],
-  "pnpm": {
-    "enabled": true
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
